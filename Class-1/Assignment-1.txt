@@ -1,0 +1,31 @@
+Q1.     WHat is Emmet?
+Ans->   Emmet is a inbuilt plugins in vs-code that allows faster development. It uses different abbreviations & 
+        short expression then dynamically converts them into full code.
+
+Q2.     Difference b/w library & framework?
+Ans->   Library gives you freedom to choose where you want to call them while the framework is in the charge of the
+        flow. It provides some places for you to plug in your code, but it calls the code you plugged in as needed.
+
+Q3.     What is CDN & why do we use it?
+Ans->   CDN (content delivery network) is a distributed grouped of servers that caches content close to the user.
+        It allows for the quick delivery of assets needed for loading internet content like HTML, JS Files, images etc.
+
+Q4.     Why React known as React?
+Ans->   React is called "React" beacuse it reacts to the constantly changes made by the user on websites like
+        mouse click, page scrolling etc.
+
+Q5.     What is cross-origin in the script tag?
+Ans->   Cross-Origin Resource Sharing(CORS) is an HTTP header based mechanism that allows a server to indicate any
+        origins (domain, scheme, or port) other than its own from which a browser should permit resource loading.
+
+Q6.     What is the difference b/w React & ReactDOM?
+Ans->   React is JS library for building User Interfaces & ReactDOM is the JS library that allows React to interact
+        with the DOM.
+
+Q7.     What is the difference b/w react.development.js and react.production.js files via CDN?
+Ans->   In production mode, compression of JS and other resource happens to reduce size of the code which is not 
+        the case in development mode. Performance is much faster in production mode than development mode.
+
+Q8.     What are async and defer?
+Ans->   Async allows your script to run as soon as it's loaded, without blocking other elements on the page. 
+        Defer means your script will only execute after the page has finished loading.
