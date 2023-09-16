@@ -1,0 +1,119 @@
+Q1.     What is NPM?
+Ans-    NPM is a package manager for javascript. It contains more than 
+        2 million packages.
+
+Q2.     What is Parcel/Webpack? Why do we need it?
+Ans-    Parcel is an open source bundler that helps you to pack the assets of
+        a web application like (code, images, packages etc) into a bundles
+        so that the app can be served easily.
+        Advantages of using Parcel:-
+        - Dev Build
+        - Local Server
+        - HMR - Hot Module Replacement
+        - File watching Alogorithm - written in C++
+        - Catching Faster Builds
+        - Image Optimization
+        - Minification of file
+        - Bundling
+        - Compressing
+        - Consistent Hashing
+        - Code Splitting
+        - Differential Bundling - to support older browsers
+        - Diagnostics
+        - Error Handling
+        - It allows to host also on https
+        - Tree Shaking - Remove unused code
+        - Different dev and prod bundles
+
+Q3.     What is .parcel-cache?
+Ans-    The .cache folder (or .parcel-cache in parcel v2) stores information 
+        about your project when parcel builds it, so that when it rebuilds, 
+        it doesn't have to re-parse and re-analyze everything from scratch. 
+        It's a key reason why parcel can be so fast in development mode. 
+
+Q4.     What is npx?
+Ans-    It allows developer to execute any JS package available on the NPM
+        registry without even installing it.
+
+Q5.     What is the difference b/w dependencies v/s dev-dependencies?
+Ans-    Dependencies are the packages that are required for your application 
+        to run properly, devDependencies are the packages that are required 
+        for development and testing purposes only.
+
+Q6.     What is Tree Shaking?
+Ans-    In modern JavaScript applications, we use module bundlers (e.g., webpack or Rollup) 
+        to automatically remove dead code when bundling multiple JavaScript 
+        files into single files. This is important for preparing code that is 
+        production ready, for example with clean structures and minimal 
+        file size.
+
+Q7.     What is Hot Module Replacement?
+Ans-    HMR improves the development experience by updating modules in the 
+        browser at runtime without needing a whole page refresh. This means 
+        that application state can be retained as you change small things 
+        in your code.
+
+Q8.     List down 5 superpowers of parcel & explain any 3 of them?
+Ans-    1. Tree Shaking
+        2. HMR
+        3. Catching :- Parcel caches everything when it builds the code. It 
+                        helps in fatser development as if you restart the 
+                        server, it will take less time to build as it rebuilds those
+                        files only which have been modified after the previous
+                        build. 
+        4. Content Hashing:- Parcel automatically includes content hashes in 
+                                the names of all output files, which enables 
+                                long-term browser caching. Whenever the 
+                                contents of a bundle changes, the hash 
+                                included in the filename will be updated, 
+                                triggering invalidation of CDN and browser 
+                                caches.
+        5. Image Optimization:- Parcel supports resizing, converting, and 
+                                optimizing images. You can use query 
+                                parameters when referencing an image in HTML, 
+                                CSS, or JavaScript to specify which format and 
+                                size the image should be converted to. You can 
+                                request multiple sizes or formats from the 
+                                same source image, which helps support 
+                                different types of devices or browsers 
+                                efficiently.
+
+Q9.     What is .gitignore? What should we add and not add into it?
+Ans-    .gitignore file is used to store all the files & directories that 
+        should be ignored and need not to be commited over git.
+        We should add those files which can be generated automatically or
+        is not required in server. We should not add those files which can't 
+        be generated automatically on server.
+
+Q10.    What's the difference b/w package.json & package-lock.json?
+Ans-    package.json file contains the meta deta and all the dependencies
+        of the project.It also store the version or version range of all the
+        dependencies. It can be edited manually.
+                        package-lock.json file contains the exact version of
+        every installed dependencies. It is not meant to be edited manually to
+        maintain the consistency across the team members.
+
+Q11.    Why should i not modify package-lock.json?
+Ans-    It is not meant to be manually modified and should be committed to 
+        the version control system to ensure consistency across all team 
+        members.
+
+Q12.    What is node_modules? Should we push it into git?
+Ans-    It contains all the code for the package we have installed in our
+        project and the code for the dependencies of the package as well.
+        The size of the node_modules is too large and it can be generated
+        every time when we do npm install. That's why it should not be 
+        pushed to git.
+
+Q13.    What is dist folder?
+Ans-    dist folder is the location where the final compiled version the 
+        project is stored. The dist folder is typically created by a build
+        process which takes the source code and compiled it into the final
+        version.
+
+Q14.    What is browserlists?
+Ans-    Browserslist is a tool that allows specifying which browsers should 
+        be supported in your frontend app by specifying "queries" in a config 
+        file. It's used by frameworks/libraries such as React, Angular and 
+        Vue, but it's not limited to them.
+
