@@ -1,0 +1,45 @@
+Q1.     What is JSX?
+Ans-    i) JSX is a syntax extension for JS that lets you write HTML like markup 
+        inside a JS file. 
+        ii) It is prferred way to create components in React.
+        iii) JSX code is transpilled by babel.
+                JSX => React.createElement => React Element (JS obj) => 
+                                                                HTML Element (render)
+        iv) Attributes are written in camelCase in JSX.
+
+Q2.     Superpowers of JSX?
+Ans-    1)  Clean code
+        2)  Faster 
+        3)  Component Reuseability
+        4)  Can execute JS code efficiently
+
+Q3.     Role of type Attributes in script tag? what option are available?
+Ans-    This attributes represent the type of script. 
+        These are options available:-
+                i) Attribute is not set (default)
+                ii) an empty string
+                iii) a javascript MIME (Multipurpose Internet Mail Extension)
+                        ex:- text/javascript
+        
+Q4.     {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>}
+        in JSX?
+Ans-    {TitleComponent} -> In this way it is invoking TitleComponent function and 
+                                executing like JS code.
+
+        <TitleComponent/>-> This syntax is a shorthand for creating and rendering an
+                                instance of the TitleComponent without passing any 
+                                children to it. This is suitable when you want to 
+                                render the TitleComponent as a self-contained element 
+                                without any child elements or content.
+
+        <TitleComponent></TitleComponent> :- Use {<TitleComponent></TitleComponent>} 
+                                                when you want to include child 
+                                                elements or content within the 
+                                                TitleComponent.
+                                                ex:-
+                                                <TitleComponent>
+                                                        <span>Some content</span>
+                                                </TitleComponent>
+
+
+
