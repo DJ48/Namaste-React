@@ -1,0 +1,133 @@
+Q1.     Is JSX mandatory for React?
+Ans-    No, JSX is not mandatory for React. It is syntatic sugar for React.
+        It provides a more declarative and expressive way to describe user 
+        interfaces in React applications.
+
+Q2.     Is ES6 mandatory for react?
+Ans-    ES6 is not mandatory for React, but it is highly recommended and 
+        widely used in the React ecosystem. React itself doesn't require ES6, 
+        but modern JavaScript features provided by ES6 and later versions can 
+        significantly enhance your development experience and make your code 
+        more readable and maintainable.
+
+Q3.     How to write comments in JSX?
+Ans-    You can write comments in JSX inside {/* comments. */}.
+
+Q4.     What is <React.Fragment> </React.Fragment> and <> </>?
+Ans-    <React.Fragment>...</React.Fragment>: This syntax is used to define a 
+                fragment explicitly. It's especially useful when you want to 
+                give your fragment a name for clarity.
+                <React.Fragment>
+                    <div>Child 1</div>
+                    <div>Child 2</div>
+                </React.Fragment>
+        <>...</> (also known as the empty angle brackets): This is a shorthand 
+                for defining fragments. It was introduced in React 16.2 as a 
+                more concise way to create fragments.
+                It is equivalent to <React.Fragment>...</React.Fragment>, but 
+                it doesn't require the use of the React namespace.       
+                <>
+                     <div>Child 1</div>
+                    <div>Child 2</div>
+                </>
+
+Q5.     What is Virtual DOM?
+Ans-    The Virtual DOM (VDOM) is a lightweight, in-memory representation of 
+        the actual DOM (Document Object Model) in a web browser. React uses 
+        the Virtual DOM as an intermediate step to efficiently update and 
+        manipulate the real DOM, resulting in improved performance and a 
+        better user experience.
+        Here's how the Virtual DOM works:
+
+        1. Initial Rendering: When you create a React component and render it, 
+                React builds a Virtual DOM tree that mirrors the structure of 
+                the actual DOM.
+
+        2. Updates: When there's a change in the component's state or props, 
+                React creates a new Virtual DOM tree representing the updated 
+                UI.
+                React then performs a process called "reconciliation" to 
+                compare the new Virtual DOM with the previous one to identify 
+                the differences (known as "diffing").
+                By comparing the Virtual DOM trees, React can efficiently 
+                determine which parts of the actual DOM need to be updated.
+
+        3. Reconciliation: React determines the most efficient way to update 
+                the real DOM based on the differences between the old and new
+                Virtual DOM trees.
+                It calculates a minimal set of changes (insertions, updates, 
+                and deletions) needed to bring the real DOM in sync with the 
+                updated Virtual DOM.
+
+        4. Updating the Real DOM: React then applies these minimal changes 
+                directly to the real DOM, updating only the parts that have 
+                changed.
+                This process is significantly faster than directly 
+                manipulating the entire DOM for every change.
+
+Q6.     What is React fiber?
+Ans-    React Fiber, often referred to as "React's Fiber Reconciliation 
+        Algorithm," is a fundamental reimplementation of React's core 
+        algorithm for rendering user interfaces. It was introduced in React 
+        version 16 as a significant internal rewrite of React's reconciliation
+        process. React Fiber is designed to provide better performance, more 
+        flexibility, and improved support for asynchronous rendering and 
+        concurrent mode.
+
+Q7.     Why we need keys in react? When do we need keys in React?
+Ans-    In React, keys are used to identify and differentiate between items in
+        a list of elements (e.g., when rendering an array of components or 
+        items). Keys are essential for React's reconciliation algorithm to 
+        efficiently update the user interface and maintain component state 
+        correctly.
+                    
+        When Do We Need Keys:
+        1. When mapping over an array of data and rendering components for 
+            each item, assign a unique key to each component.
+        2. When you have dynamic lists where items can be added, removed, or 
+            re-ordered, using keys helps React efficiently update the list.
+
+Q8.     Can we use index as key?
+Ans-    While it is possible to use the array index as a key in React, it's 
+        generally not recommended. If you choose not to assign an explicit key
+        to list items then React will default to using indexes as keys.
+
+Q9.     What is props in react?
+Ans-    In React, "props" is a short form of "properties," and it refers to a 
+        mechanism for passing data from a parent component to a child 
+        component. Props are a fundamental concept in React, and they enable 
+        you to make your components dynamic and reusable.
+        Ex:-
+        // ParentComponent.js
+        import React from 'react';
+        import ChildComponent from './ChildComponent';
+
+        function ParentComponent() {
+            const data = 'Hello, World!';
+  
+            return (
+                <div>
+                    <ChildComponent message={data} />
+                </div>
+            );
+        }
+
+        export default ParentComponent;
+
+        // ChildComponent.js
+        import React from 'react';
+
+        function ChildComponent(props) {
+            return <p>{props.message}</p>;
+        }
+
+        export default ChildComponent;
+
+Q10.    What is a config driven UI?
+Ans-    A config-driven UI (User Interface) refers to a user interface design 
+        or system that is primarily configured or controlled by specific 
+        configurations rather than hardcoded implementations. This approach 
+        allows for greater flexibility and customization without requiring 
+        extensive coding changes. It is a way to separate the UI logic from 
+        the application logic, making it easier to modify the user interface 
+        without altering the underlying codebase.
