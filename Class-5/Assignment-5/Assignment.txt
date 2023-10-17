@@ -1,0 +1,139 @@
+Q1.     Diff b/w named export, default export & * as export?
+Ans-    1. Named Exports: Named exports allow you to export multiple pieces of 
+                data or functions from a single module. Each piece of data or 
+                function must be explicitly exported and imported by its 
+                exact name. 
+
+                // In the exporting module
+                export const func1 = () => { /* ... */ };
+                export const variable1 = 'value';
+
+                // In the importing module
+                import { func1, variable1 } from './module';
+        2. Default Export: Default exports allow you to export a single 
+                "main" function, object, or value from a module. When you 
+                import the module, you can choose any name for the import.
+                // In the exporting module
+                const mainFunction = () => { /* ... */ };
+                export default mainFunction;
+
+                // In the importing module
+                import myFunction from './module';
+
+        3. * as Export: The * as export is used to import the entire module 
+                as a single object, which contains all the exported values, 
+                including both default and named exports.
+                // In the exporting module
+                export const func1 = () => { /* ... */ };
+                export const variable1 = 'value';
+                export default mainFunction;
+
+                // In the importing module
+                import * as myModule from './module';
+                // Now you can access func1, variable1, and the default export
+                as myModule.func1, myModule.variable1, and myModule.default.
+
+Q2.     What is the important of config.js file?
+Ans-    A config.js file in a React application is not a standard or built-in 
+        part of React itself. However, such a file is often used to store 
+        configuration data, environment variables, or settings that are 
+        crucial for the application's behavior.
+
+Q3.     What are React hooks?
+Ans-    React hooks are functions that allow you to use state and other React 
+        features without writing a class. They were introduced in React 
+        version 16.8 as a way to use stateful logic without having to change 
+        your component hierarchy.
+
+        Some of the commonly used React hooks include:
+        1. useState: useState is a hook that allows functional components to 
+                manage state. It returns a stateful value and a function to 
+                update it.
+                ex:-
+                import React, { useState } from 'react';
+                const ExampleComponent = () => {
+                    const [count, setCount] = useState(0);
+                    return (
+                        <div>
+                            <p>You clicked {count} times</p>
+                            <button onClick={() => setCount(count + 1)}>
+                            Click me
+                            </button>
+                        </div>
+                    );
+                };
+        2. useEffect: useEffect is a hook that performs side effects in 
+                function components. It allows you to perform side effects 
+                after React has rendered the component.
+                ex:-
+                import React, { useState, useEffect } from 'react';
+
+                const ExampleComponent = () => {
+                    const [count, setCount] = useState(0);
+
+                    useEffect(() => {
+                        document.title = `You clicked ${count} times`;
+                    });
+
+                    return (
+                        <div>
+                            <p>You clicked {count} times</p>
+                            <button onClick={() => setCount(count + 1)}>
+                                Click me
+                            </button>
+                        </div>
+                    );
+                };
+        3. useContext: useContext is a hook that allows you to subscribe to 
+                React context without introducing nesting.
+                import React, { useContext } from 'react';
+                const ThemeContext = React.createContext('light');
+
+                const ExampleComponent = () => {
+                    const theme = useContext(ThemeContext);
+                    // Use the theme in your component...
+
+                    return <div>Current theme: {theme}</div>;
+                };
+        4. useReducer: useReducer is a hook that is used for state management 
+                in complex components. It is similar to the Redux pattern and 
+                is helpful when state logic is complex and involves multiple 
+                sub-values or when the next state depends on the previous one.
+                ex:-
+                import React, { useReducer } from 'react';
+
+                const initialState = { count: 0 };
+
+                function reducer(state, action) {
+                    switch (action.type) {
+                        case 'increment':
+                            return { count: state.count + 1 };
+                        case 'decrement':
+                            return { count: state.count - 1 };
+                        default:
+                            throw new Error();
+                    }
+                }
+
+                const ExampleComponent = () => {
+                    const [state, dispatch] = useReducer(reducer, 
+                    initialState);
+
+                    return (
+                        <div>
+                            Count: {state.count}
+                            <button onClick={() => dispatch({ type: 
+                            'increment' })}>+</button>
+                            <button onClick={() => dispatch({ type: 
+                            'decrement' })}>-</button>
+                        </div>
+                    );
+                };
+
+Q4.     Why do we need useState hook?
+Ans-    useState hook is used to manage the state of a functional component.
+        Ex:- In Food Order App, The list of restaurant is getting displayed.
+        we want to filter the list by rating and simulataneously our UI 
+        should update then we can use useState to capture the list of 
+        restaurant and if any changes made to that list. Our UI will be auto
+        updated.
