@@ -1,0 +1,164 @@
+Q1.     What is microservice?
+Ans-    Microservices are a software development technique that structures an 
+        application as a collection of loosely coupled services. Each service 
+        is designed to perform a specific business function and can be 
+        developed, deployed, and scaled independently.
+
+        Key characteristics of microservices include:
+        1. Modularity: Microservices promote the decomposition of complex 
+            applications into smaller, manageable services, each responsible 
+            for a specific set of capabilities.
+
+        2. Independence: Each microservice can be developed, deployed, and 
+            scaled independently, allowing for more agility and flexibility 
+            in the development process.
+
+        3. Resilience: Microservices are designed to be resilient to failure, 
+            meaning that the failure of one service does not necessarily 
+            impact the entire application.
+
+        4. Scalability: With microservices, individual components can be 
+            scaled independently, allowing for better resource utilization 
+            and improved performance.
+
+        5. Technology Diversity: Microservices can be built using different 
+            programming languages, frameworks, and tools, enabling teams to 
+            use the best technology for each service.
+
+        6. Autonomy: Development teams can work independently on different 
+            microservices, enabling faster development cycles and reducing 
+            dependencies.
+
+Q2.     What is a monolith architecture?
+Ans-    A monolithic architecture refers to a traditional software development
+        approach where all components of an application are interconnected and
+        interdependent. In this architecture, the entire application is built 
+        as a single, indivisible unit. All of the code for the application, 
+        including the user interface, business logic, and data access layers, 
+        is written and deployed as a single package.
+
+        Key characteristics of a monolithic architecture include:
+        1. Tight Coupling: All components of the application are tightly 
+            coupled and dependent on each other, making it difficult to 
+            modify or update individual components without affecting the 
+            entire system.
+
+        2. Single Codebase: The entire application is built from a single 
+            codebase, making it easier to develop and test but more 
+            challenging to maintain and scale as the application grows.
+
+        3. Single Deployment Unit: The entire application is deployed as a 
+            single unit, requiring the entire application to be updated even 
+            for minor changes or bug fixes.
+
+        4. Limited Scalability: Scaling a monolithic application can be 
+            challenging, as scaling one component often requires scaling the 
+            entire application, leading to inefficiencies and increased costs.
+
+        5. Technology Stack Homogeneity: A monolithic application typically 
+            uses a single technology stack and framework, limiting the 
+            flexibility to use different technologies for different parts 
+            of the application.
+
+Q3.     What is the difference b/w microservice & monolith?
+Ans-    Read above points.
+
+Q4.     Why do we need a useEffect hook?
+Ans-    The useEffect hook in React is essential for handling side effects in 
+        functional components. It allows you to perform various operations 
+        that cannot be handled during the render phase, such as data fetching,
+        subscriptions, or manually changing the DOM. 
+
+Q5.     What is optional chaining?
+Ans-    Optional chaining is a feature in JavaScript that enables you to 
+        write code that can handle potentially undefined or null values more 
+        gracefully. It allows you to access properties of an object deeply 
+        nested within a chain of connected objects without the need to 
+        explicitly check if each reference in the chain is valid.
+        const user = {
+            id: 1,
+            name: 'John Doe',
+            address: {
+                city: 'New York',
+                zipcode: '10001'
+            }
+        };
+
+        // Without optional chaining
+        const city = user.address && user.address.city;
+
+        // With optional chaining
+        const cityWithOptionalChaining = user.address?.city;
+
+        console.log(city); // Output: New York
+        console.log(cityWithOptionalChaining); // Output: New York
+
+Q6.     What is shimmer ui?
+Ans-    In the context of user interfaces, a shimmer effect or shimmer UI is 
+        a design pattern used to indicate that content is being loaded. It is 
+        commonly employed in situations where data retrieval might take some 
+        time, helping to manage user expectations and prevent the appearance 
+        of a frozen or unresponsive interface.
+
+Q7.     Difference b/w JS expression & JS statement?
+Ans-    1. Function Declaration (Statement): A function declaration 
+            (or statement) is a way to define a named function in JavaScript.
+            It is hoisted to the top of the current scope, meaning that it 
+            can be called before it's defined in the code.
+            The syntax for a function declaration is as follows:
+            function myFunction() {
+                // function body
+            }
+        2. Function Expression: A function expression creates a function and 
+            assigns it to a variable. It is not hoisted to the top of the 
+            scope, so it cannot be called before it appears in the code.
+            The syntax for a function expression is as follows:
+            const myFunction = function() {
+                // function body
+            };
+
+Q8.     What is conditional rendering? Explain with a code example.
+Ans-    Conditional rendering in React refers to the process of displaying 
+        different components or elements based on certain conditions. This 
+        allows you to control what is displayed to the user based on the 
+        state of the application or certain user interactions. You can use 
+        conditional rendering to show or hide elements, render different 
+        components, or apply specific styles based on certain conditions.
+
+        Here's an example of conditional rendering in React:
+        import React, { useState } from 'react';
+
+        const ConditionalComponent = () => {
+            const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+            const handleLogin = () => {
+                setIsLoggedIn(true);
+            };
+
+            const handleLogout = () => {
+                setIsLoggedIn(false);
+            };
+
+            return (
+                <div>
+                    {isLoggedIn ? (
+                        <div>
+                            <h1>Welcome User!</h1>
+                            <button onClick={handleLogout}>Logout</button>
+                        </div>
+                    ) : (
+                        <div>
+                            <h1>Please Log In</h1>
+                            <button onClick={handleLogin}>Login</button>
+                        </div>
+                     )}
+                </div>
+            );
+        };
+
+        export default ConditionalComponent;
+
+Q9.     What is CORS?
+Q10.    What is async and await?
+Q11.    What is the use of 'const json = await data.json();' in body 
+        component?
